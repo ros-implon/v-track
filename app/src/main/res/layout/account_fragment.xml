@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable name="viewmodel"
+            type="com.example.vehicletrack.ui.home.account.AccountViewModel"
+            />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        tools:context=".ui.home.account.AccountFragment">
+
+        <RelativeLayout
+            android:id="@+id/root_relative_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?actionBarSize">
+
+            <TextView
+                android:id="@+id/name_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@{viewmodel.user.first_name + " " + viewmodel.user.last_name}'
+                android:layout_centerHorizontal="true"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                android:textSize="24sp"
+                android:padding="8dp"/>
+
+            <TextView
+                android:id="@+id/email_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewmodel.user.email}"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/lightGrey"
+                android:layout_below="@+id/name_text"
+                android:paddingBottom="12dp"/>
+
+
+            <TextView
+                android:id="@+id/history_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Track History"
+                android:layout_below="@+id/email_text"
+                android:layout_marginTop="16dp"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:padding="12dp"
+                android:textColor="@color/colorAccent"/>
+
+            <ProgressBar
+                android:id="@+id/progressbar_routes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/history_text"
+                android:layout_marginTop="100dp"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/noroutes_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/history_text"
+                android:layout_marginTop="100dp"
+                android:textColor="@color/colorAccent"
+                android:text="No Track History Found"
+                android:visibility="gone"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_th"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/history_text" />
+
+
+        </RelativeLayout>
+
+
+
+
+    </FrameLayout>
+</layout>

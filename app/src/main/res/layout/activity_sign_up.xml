@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        tools:context=".ui.auth.LoginActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="32dp">
+
+            <ImageView
+                android:id="@+id/image_top"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+
+            <TextView
+                android:id="@+id/text_greeting"
+                android:layout_width="448dp"
+                android:layout_height="wrap_content"
+                android:text="@string/signup_greeting_text"
+                android:textColor="@color/colorAccent"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="50dp"
+                android:layout_below="@+id/image_top"
+                />
+
+            <LinearLayout
+                android:id="@+id/login_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_greeting"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/fname_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/lightGrey"
+                    android:textColor="@color/lightGrey"
+                    android:textColorHint="@color/lightGrey"
+                    android:hint="@string/firstname"
+                    android:inputType="textPersonName"
+                    android:layout_marginBottom="16dp"
+                    tools:targetApi="lollipop" />
+
+                <EditText
+                    android:id="@+id/lname_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/lightGrey"
+                    android:textColor="@color/lightGrey"
+                    android:textColorHint="@color/lightGrey"
+                    android:hint="@string/lastname"
+                    android:inputType="textPersonName"
+                    android:layout_marginBottom="16dp"
+                    tools:targetApi="lollipop" />
+
+                <EditText
+                    android:id="@+id/email_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/lightGrey"
+                    android:textColor="@color/lightGrey"
+                    android:textColorHint="@color/lightGrey"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress"
+                    android:layout_marginBottom="16dp"
+                    tools:targetApi="lollipop" />
+
+                <EditText
+                    android:id="@+id/password_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/lightGrey"
+                    android:textColor="@color/lightGrey"
+                    android:textColorHint="@color/lightGrey"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:layout_marginBottom="16dp"
+                    tools:targetApi="lollipop" />
+
+                <Button
+                    android:id="@+id/button_signup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_background"
+                    android:text="@string/sign_up"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorAccent"/>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/login_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/already_registered_login_here"
+                android:textColor="@color/colorAccent"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_horizontal"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/progress_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#21253A"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/progress_circular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
